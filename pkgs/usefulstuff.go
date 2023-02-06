@@ -3,6 +3,7 @@ package pkgs
 import (
 	"fmt"
 	"os"
+	"runtime"
 	"time"
 )
 
@@ -14,6 +15,21 @@ func GetTime() string {
 	return time.Now().Format(time.RFC822)
 }
 
-func GetLinuxUser() string {
+func GetUserName() string {
+	switch runtime.GOOS {
+	case "windows":
+		return GetWinUserName()
+	case "linux":
+		return GetLinuxUserName()
+	default:
+		return "unknown os"
+	}
+}
+
+func GetWinUserName() string {
+	return os.Getenv("USERNAME")
+}
+
+func GetLinuxUserName() string {
 	return os.Getenv("USER")
 }
