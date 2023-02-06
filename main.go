@@ -10,5 +10,6 @@ import (
 func main() {
 	pkgs.Greeting("John")
 	fmt.Println("Current time:", pkgs.GetTime())
+	fmt.Println("Current user:", pkgs.GetLinuxUser())
 	internal.HelloFromLinuxBranch()
 }

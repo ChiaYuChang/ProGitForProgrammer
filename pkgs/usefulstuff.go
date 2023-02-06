@@ -2,6 +2,7 @@ package pkgs
 
 import (
 	"fmt"
+	"os"
 	"time"
 )
 
@@ -11,4 +12,8 @@ func Greeting(name string) {
 
 func GetTime() string {
 	return time.Now().Format(time.RFC822)
+}
+
+func GetLinuxUser() string {
+	return os.Getenv("USER")
 }
