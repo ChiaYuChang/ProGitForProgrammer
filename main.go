@@ -8,14 +8,8 @@ import (
 )
 
 func main() {
-<<<<<<< HEAD
 	pkgs.Greeting("John")
 	fmt.Println("Current time:", pkgs.GetTime())
-	fmt.Println("Current user:", pkgs.GetLinuxUser())
-	internal.HelloFromLinuxBranch()
-=======
-	pkgs.Greeting("Jane")
-	fmt.Println("Current User:", pkgs.GetUserName())
-	internal.HelloFromWinBranch()
->>>>>>> win_branch
+	fmt.Println("Current user:", pkgs.GetUserName())
+	internal.Hello()
 }
